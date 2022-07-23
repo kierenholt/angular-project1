@@ -1,0 +1,13 @@
+<mat-card>
+    <mat-form-field appearance="fill">
+      <textarea matInput
+      cdkAutosizeMinRows="1"
+      cdkAutosizeMaxRows="5" [(ngModel)]="enteredTitle">enter Title</textarea>
+
+      <textarea matInput
+      cdkAutosizeMinRows="1"
+      cdkAutosizeMaxRows="5" [(ngModel)]="enteredContent">enter Content</textarea>
+
+    <button mat-stroked-button color="secondary" (click)="onAddPost()">save post</button>
+      </mat-form-field>
+</mat-card>

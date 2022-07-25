@@ -1,13 +1,27 @@
 <mat-card>
+  <form (submit)="onAddPost(postForm)" #postForm="ngForm">
     <mat-form-field appearance="fill">
-      <textarea matInput
-      cdkAutosizeMinRows="1"
-      cdkAutosizeMaxRows="5" [(ngModel)]="enteredTitle">enter Title</textarea>
+      <input matInput 
+      name="title"
+      ngModel
+      required
+      #title="ngModel"
+      placeholder="Post title">
+      <mat-error *ngIf="title.invalid" >Please enter a post title</mat-error>
+    </mat-form-field>
+<br>
+    <mat-form-field appearance="fill">
+      <input matInput
+      name="content" 
+      ngModel
+      required
+      #content="ngModel"
+      placeholder="Post content">
+      <mat-error *ngIf="content.invalid" >Please enter content</mat-error>
+    </mat-form-field>
 
-      <textarea matInput
-      cdkAutosizeMinRows="1"
-      cdkAutosizeMaxRows="5" [(ngModel)]="enteredContent">enter Content</textarea>
-
-    <button mat-stroked-button color="secondary" (click)="onAddPost()">save post</button>
-      </mat-form-field>
+    <button mat-stroked-button 
+    color="secondary" 
+    type="form">save post</button>
+  </form>
 </mat-card>
